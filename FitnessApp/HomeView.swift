@@ -16,6 +16,13 @@ struct HomeView: View {
     
     
     
+    var mockActivitys = [
+        Activity(id: 0, title: "Today steps", subtitle: "Goal 12,000", image: "figure.walk", tintColor: .green, amount: "9000"),
+        Activity(id: 1, title: "Today steps", subtitle: "Goal 2,000", image: "figure.walk", tintColor: .red, amount: "900"),
+        Activity(id: 2, title: "Today steps", subtitle: "Goal 15,000", image: "figure.walk", tintColor: .blue, amount: "7000"),
+        Activity(id: 3, title: "Today steps", subtitle: "Goal 11,000", image: "figure.walk", tintColor: .purple, amount: "5000")
+    ]
+    
     
     
     var body: some View {
@@ -94,8 +101,40 @@ struct HomeView: View {
             .padding()
             
             
+            HStack{
+                Text("Fitness Activity")
+                    .font(.title2)
+                Spacer()
+                
+                Button{
+                    print("show more")
+                } label: {
+                    Text("Show more")
+                        .padding(.all, 10)
+                        .foregroundColor(.white)
+                        .background(.blue)
+                        .cornerRadius(20)
+                }
+
+
+
+            }
+            .padding(.horizontal)
             
-            Spacer()
+            
+            
+            
+            
+            LazyVGrid(columns: Array(repeating: GridItem(spacing: 20), count: 2)){
+
+                ForEach(mockActivitys, id: \.id){
+                    activity in ActivityCard(activity: activity)
+                }
+            }
+            
+            .padding(.horizontal)
+            
+
         }
         
         
