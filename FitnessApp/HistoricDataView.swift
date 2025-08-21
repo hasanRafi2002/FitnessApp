@@ -10,8 +10,6 @@ import SwiftUI
 struct HistoricDataView: View {
     var body: some View {
         Text("hi i am rafi")
-        
-        
     }
 }
 
