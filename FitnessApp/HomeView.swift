@@ -127,6 +127,11 @@ struct HomeView: View {
                         
                         
                         
+                        
+                        
+                        
+                        
+                        
                         LazyVGrid(columns: Array(repeating: GridItem(spacing: 20), count: 2)){
                             
                             ForEach(mockActivitys, id: \.id){
